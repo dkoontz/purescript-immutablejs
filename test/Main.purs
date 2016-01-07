@@ -13,5 +13,9 @@ import Immutable.Map as Map
 
 main :: forall e. Eff (console :: CONSOLE | e) Unit
 main = do
-  let m = Map.create { foo: "somefoovalue", bar: "somebarvalue" }
-  Map.get "bar" m |> fromMaybe "key not found" |> log
+  Map.create { foo: "somefoovalue", bar: "somebarvalue" }
+  |> Map.set "bar" "1234"
+  |> Map.get "bar"
+  |> fromMaybe "key not found"
+  |> show
+  |> log

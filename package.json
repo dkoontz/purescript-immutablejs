@@ -1,0 +1,29 @@
+{
+  "name": "purescript-immutablejs",
+  "version": "0.1.0",
+  "description": "Purescript bindings to Facebook's immutable.js",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkoontz/purescript-immutablejs.git"
+  },
+  "keywords": [
+    "purescript",
+    "immutablejs"
+  ],
+  "author": "David Koontz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dkoontz/purescript-immutablejs/issues"
+  },
+  "homepage": "https://github.com/dkoontz/purescript-immutablejs#readme",
+  "dependencies": {
+    "immutable": "^3.7.6"
+  }
+}

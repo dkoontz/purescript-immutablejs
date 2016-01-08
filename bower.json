@@ -14,5 +14,8 @@
     "purescript-console": "^0.1.0",
     "purescript-functions": "~0.1.0",
     "purescript-maybe": "~0.3.5"
+  },
+  "devDependencies": {
+    "purescript-test-unit": "~3.0.0"
   }
 }

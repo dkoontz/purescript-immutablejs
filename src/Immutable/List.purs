@@ -113,7 +113,7 @@ import Data.Maybe
 foreign import data List :: * -> *
 
 foreign import create :: forall t. Array t -> List t
-foreign import size :: forall t. List t -> Number
+foreign import size :: forall t. List t -> Int
 
 -- Persistent changes
 

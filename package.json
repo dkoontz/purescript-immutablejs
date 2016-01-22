@@ -1,6 +1,6 @@
 {
   "name": "purescript-immutablejs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Purescript bindings to Facebook's immutable.js",
   "main": "",
   "directories": {

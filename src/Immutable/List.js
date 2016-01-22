@@ -15,6 +15,7 @@ exports._unshift = function (array, list) { return list.unshift(array); };
 exports._get = function (index, list) { return toNothingIf(list.get(index, undefined)); };
 exports.first = function (list) { return toNothingIf(list.first(), undefined); };
 exports.last = function (list) { return toNothingIf(list.last(), undefined); };
+exports.toArray = function (list) { return list.toArray(); };
 exports._filterNot = function (filterFn, list) { return list.filterNot(filterFn); };
 
 function toNothingIf(value, shouldBeNothingIf)

@@ -2,7 +2,7 @@
   "name": "purescript-immutablejs",
   "version": "0.1.0",
   "description": "Purescript bindings to Facebook's immutable.js",
-  "main": "index.js",
+  "main": "",
   "directories": {
     "test": "test"
   },
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dkoontz/purescript-immutablejs.git"
+    "url": "https://github.com/dkoontz/purescript-immutablejs.git"
   },
   "keywords": [
     "purescript",

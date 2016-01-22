@@ -43,6 +43,10 @@ module Immutable.List
   -- Reading deep values
   -- , getIn
   -- , hasIn
+  -- Conversion to Javascript types
+  -- , toJS()
+  , toArray
+  -- , toObject()
   -- Conversion to Collections
   -- , toMap
   -- , toOrderedMap
@@ -144,6 +148,8 @@ foreign import _get :: forall t. Fn2 Int (List t) (Maybe t)
 foreign import first :: forall t. List t -> Maybe t
 
 foreign import last :: forall t. List t -> Maybe t
+
+foreign import toArray :: forall t. List t -> Array t
 
 filterNot :: forall t. (t -> Boolean) -> List t -> List t
 filterNot = runFn2 _filterNot

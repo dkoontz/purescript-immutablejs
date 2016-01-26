@@ -2,8 +2,9 @@
 
 var Record = require('immutable').Record;
 
-exports.makeRecord = function (keysAndDefaultValues) { return Record(keysAndDefaultValues)(); };
-// exports._merge = function (object, record) { return record.merge(object); };
+exports.create = function (keysAndDefaultValues) { return Record(keysAndDefaultValues)(); };
+exports.get = function (key, record) { return record.get(key); };
+exports.set = function (key, value, record) { return record.set(key, value); };
 
 exports._unsafeGetProperty = function (key, record) { return record.get(key); };
 exports._unsafeSetProperty = function (key, value, record) { return record.set(key, value); };

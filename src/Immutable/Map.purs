@@ -106,7 +106,7 @@ foreign import data Map :: * -> * -> *
 
 -- Utility
 foreign import create :: forall k v r. Object r -> Map k v
-foreign import size :: forall k v. Map k v -> Number
+foreign import size :: forall k v. Map k v -> Int
 
 -- Persistent changes
 set :: forall k v. k -> v -> Map k v -> Map k v

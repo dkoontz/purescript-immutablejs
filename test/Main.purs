@@ -17,8 +17,10 @@ import Test.Unit.Console
 -- import Immutable.List(List())
 
 import Tests.List
+import Tests.Record
 
 -- main :: forall e. Eff (console :: CONSOLE | e) Unit
 main :: forall e. Eff (testOutput :: TestOutput | e) Unit
 main = runTest do
   listTests
+  recordTests

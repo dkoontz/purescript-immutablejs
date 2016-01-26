@@ -1,6 +1,7 @@
 module Immutable.List
   ( List(..)
   , create
+  , areEqual
   , size
   -- Persistent changes
   , set
@@ -109,14 +110,22 @@ module Immutable.List
   -- , isSuperset
   ) where
 
-
 import Prelude
 import Data.Function
 import Data.Maybe
 
 foreign import data List :: * -> *
 
+-- New functions
+
 foreign import create :: forall t. Array t -> List t
+
+-- Lists are equal if they are the same object, aka === in Javascript
+-- This function is O(1) and does not perform a value by value check
+foreign import areEqual :: forall t. List t -> List t -> Boolean
+
+-- Properties
+
 foreign import size :: forall t. List t -> Int
 
 -- Persistent changes
@@ -154,3 +163,6 @@ foreign import toArray :: forall t. List t -> Array t
 filterNot :: forall t. (t -> Boolean) -> List t -> List t
 filterNot = runFn2 _filterNot
 foreign import _filterNot :: forall t. Fn2 (t -> Boolean) (List t) (List t)
+
+instance listIsEq :: Eq (List t) where
+  eq = areEqual

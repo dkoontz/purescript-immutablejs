@@ -17,6 +17,7 @@ exports.first = function (list) { return toNothingIf(list.first(), undefined); }
 exports.last = function (list) { return toNothingIf(list.last(), undefined); };
 exports.toArray = function (list) { return list.toArray(); };
 exports._filterNot = function (filterFn, list) { return list.filterNot(filterFn); };
+exports._areEqual = function (list1, list2) { return list1 === list2; };
 
 function toNothingIf(value, shouldBeNothingIf)
 {

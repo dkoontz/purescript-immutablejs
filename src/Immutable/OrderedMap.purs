@@ -8,13 +8,13 @@ module Immutable.OrderedMap
 , get
 ) where
 
-import Data.Function
-import Data.Maybe
+import Data.Maybe (Maybe)
+import Data.Function.Uncurried (Fn1, runFn1, Fn2, runFn2, Fn3, runFn3)
 
 foreign import data OrderedMap :: * -> * -> *
 
 -- Utility
-foreign import create :: forall k v r. Object r -> OrderedMap k v
+foreign import create :: forall k v r. Record r -> OrderedMap k v
 foreign import size :: forall k v. OrderedMap k v -> Number
 
 -- Persistent changes

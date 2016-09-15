@@ -1,4 +1,4 @@
-// module Immutable.Record
+// module Immutable.IRecord
 
 var Record = require('immutable').Record;
 

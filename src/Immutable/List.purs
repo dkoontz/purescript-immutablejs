@@ -106,9 +106,8 @@ module Immutable.List
   ) where
 
 
-import Prelude
-import Data.Function
-import Data.Maybe
+import Data.Function.Uncurried (Fn2, Fn3, runFn2, runFn3)
+import Data.Maybe (Maybe)
 
 foreign import data List :: * -> *
 

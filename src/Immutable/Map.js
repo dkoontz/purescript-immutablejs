@@ -3,7 +3,7 @@
 var Map = require('immutable').Map;
 var Maybe = require('Data.Maybe');
 
-// foreign import create :: forall k v r. Object r -> Map k v
+// foreign import create :: forall k v r. Record r -> Map k v
 exports.create = function (object) { return Map(object); };
 
 // foreign import size :: forall k v. Map k v -> Number

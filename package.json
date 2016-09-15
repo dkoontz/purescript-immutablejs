@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "pulp test"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/dkoontz/purescript-immutablejs#readme",
   "dependencies": {
-    "immutable": "^3.7.6"
+    "immutable": "^3.8.1"
   }
 }

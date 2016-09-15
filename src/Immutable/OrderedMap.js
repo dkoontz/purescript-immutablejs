@@ -3,7 +3,7 @@
 var OrderedMap = require('immutable').OrderedMap;
 var Maybe = require('Data.Maybe');
 
-// foreign import create :: forall k v r. Object r -> OrderedMap k v
+// foreign import create :: forall k v r. Record r -> OrderedMap k v
 exports.create = function (object) { return OrderedMap(object); };
 
 // foreign import size :: forall k v. OrderedMap k v -> Number

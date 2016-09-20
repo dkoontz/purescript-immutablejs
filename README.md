@@ -2,14 +2,6 @@
 
 This is a Purescript interface to the Facebook Immutable.js library.
 
-## Installation
-
-TODO: Describe the installation process
-
-## Usage
-
-TODO: Write usage instructions
-
 ## Contributing
 
 1. Fork it!
@@ -18,13 +10,11 @@ TODO: Write usage instructions
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-## History
+## Contributors
 
-TODO: Write history
-
-## Credits
-
-Huge thanks to [Nathan Faubion](https://gist.github.com/natefaubion) for developing the Accessor type for Record access
+[Simon Van Casteren](https://github.com/FrigoEU)
+Initial wrapping by [David Koontz](https://github.com/dkoontz)
+Huge thanks to [Nathan Faubion](https://github.com/natefaubion) for developing the Accessor type for Record access
 
 ## License
 

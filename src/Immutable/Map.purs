@@ -8,13 +8,13 @@ module Immutable.Map
 , get
 ) where
 
-import Data.Function
-import Data.Maybe
+import Data.Function.Uncurried (runFn1, Fn1, Fn2, runFn2, Fn3, runFn3)
+import Data.Maybe (Maybe)
 
 foreign import data Map :: * -> * -> *
 
 -- Utility
-foreign import create :: forall k v r. Object r -> Map k v
+foreign import create :: forall k v r. Record r -> Map k v
 foreign import size :: forall k v. Map k v -> Number
 
 -- Persistent changes

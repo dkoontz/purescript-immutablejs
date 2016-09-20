@@ -106,9 +106,10 @@ module Immutable.List
   ) where
 
 
-import Prelude
-import Data.Function
-import Data.Maybe
+import Data.Function.Uncurried (Fn2, Fn3, runFn2, runFn3)
+import Data.Maybe (Maybe)
+import Prelude ((<$>))
+import Test.QuickCheck.Arbitrary (arbitrary, class Arbitrary)
 
 foreign import data List :: * -> *
 
@@ -148,3 +149,6 @@ foreign import last :: forall t. List t -> Maybe t
 filterNot :: forall t. (t -> Boolean) -> List t -> List t
 filterNot = runFn2 _filterNot
 foreign import _filterNot :: forall t. Fn2 (t -> Boolean) (List t) (List t)
+
+instance arbitaryList :: (Arbitrary a) => Arbitrary (List a) where
+  arbitrary = create <$> arbitrary

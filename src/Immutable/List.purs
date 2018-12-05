@@ -111,7 +111,7 @@ import Data.Maybe (Maybe)
 import Prelude ((<$>))
 import Test.QuickCheck.Arbitrary (arbitrary, class Arbitrary)
 
-foreign import data List :: * -> *
+foreign import data List :: Type -> Type
 
 foreign import create :: forall t. Array t -> List t
 foreign import size :: forall t. List t -> Int

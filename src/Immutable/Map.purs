@@ -11,7 +11,7 @@ module Immutable.Map
 import Data.Function.Uncurried (runFn1, Fn1, Fn2, runFn2, Fn3, runFn3)
 import Data.Maybe (Maybe)
 
-foreign import data Map :: * -> * -> *
+foreign import data Map :: Type -> Type -> Type
 
 -- Utility
 foreign import create :: forall k v r. Record r -> Map k v

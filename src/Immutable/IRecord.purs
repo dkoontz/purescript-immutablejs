@@ -8,8 +8,8 @@ module Immutable.IRecord
 
 import Data.Function.Uncurried (runFn3, Fn3, Fn2, runFn2)
 
-foreign import data IRecord :: # * -> *
-newtype Accessor (r :: # *) v = Accessor String
+foreign import data IRecord :: # Type -> Type
+newtype Accessor (r :: # Type) v = Accessor String
 
 get :: forall r v. Accessor r v -> IRecord r -> v
 get (Accessor fieldName) record = unsafeGetProperty fieldName record

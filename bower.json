@@ -11,9 +11,11 @@
     "output"
   ],
   "dependencies": {
-    "purescript-functions": "*",
-    "purescript-maybe": "*"
+    "purescript-functions": "^4",
+    "purescript-maybe": "^4"
   },
   "devDependencies": {
+    "purescript-quickcheck": "^5",
+    "purescript-test-unit": "^14"
   }
 }

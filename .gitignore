@@ -5,3 +5,4 @@
 /src/.webpack.js
 .DS_Store
 .pulp-cache
+package-lock.json

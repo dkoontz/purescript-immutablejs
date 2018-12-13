@@ -10,13 +10,12 @@ module Immutable.OrderedMap
 , setmut
 ) where
 
-import Control.Monad.Eff (Eff)
+import Effect (Effect)
 import Data.Function.Uncurried (Fn1, runFn1, Fn2, runFn2, Fn3, runFn3)
 import Data.Maybe (Maybe)
-import Immutable.Mut (MUT)
 import Prelude (Unit)
 
-foreign import data OrderedMap :: * -> * -> *
+foreign import data OrderedMap :: Type -> Type -> Type
 
 -- Utility
 foreign import fromRecord :: forall k v r. Record r -> OrderedMap k v
@@ -42,16 +41,15 @@ foreign import _get :: forall k v. Fn2 k (OrderedMap k v) (Maybe v)
 
 withMutations ::
   forall k v. OrderedMap k v
-              -> (OrderedMap k v -> Eff (mut :: MUT) Unit)
+              -> (OrderedMap k v -> Effect Unit)
               -> OrderedMap k v
 withMutations = runFn2 _withMutations
 foreign import _withMutations ::
   forall k v. Fn2 (OrderedMap k v)
-                  (OrderedMap k v -> Eff (mut :: MUT) Unit)
+                  (OrderedMap k v -> Effect Unit)
                   (OrderedMap k v)
 
-setmut :: forall k v. k -> v -> OrderedMap k v -> Eff (mut :: MUT) Unit
+setmut :: forall k v. k -> v -> OrderedMap k v -> Effect Unit
 setmut = runFn3 _setmut
 foreign import _setmut
-  :: forall k v. Fn3 k v (OrderedMap k v) (Eff (mut :: MUT) Unit)
-
+  :: forall k v. Fn3 k v (OrderedMap k v) (Effect Unit)

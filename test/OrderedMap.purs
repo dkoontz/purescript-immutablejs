@@ -5,7 +5,7 @@ import Data.Maybe (Maybe(Just))
 import Data.Traversable (traverse)
 import Data.Tuple (Tuple(Tuple))
 import Immutable.OrderedMap (setmut, withMutations, set, fromRecord, get)
-import Prelude ((&&), unit, pure, (==), show, (<>), bind)
+import Prelude -- ((&&), unit, pure, (==), show, (<>), bind)
 import Test.QuickCheck ((<?>), Result, (===))
 import Test.Unit (test, suite)
 import Test.Unit.QuickCheck (quickCheck)
@@ -20,9 +20,7 @@ constructorEmpty i s =
 doWithMutations :: Array (Tuple Int String) -> Result
 doWithMutations arr =
   let om' = fromRecord {}
-      mutate = \m -> do
-        traverse (\(Tuple k v) -> setmut k v m) arr
-        pure unit
+      mutate = \m -> void $ traverse (\(Tuple k v) -> setmut k v m) arr
       om = withMutations om' mutate
    in foldl (\sum (Tuple k v) -> sum && ((get k om) == (Just v))) true arr
       <?> "Failed for arr: " <> show arr
